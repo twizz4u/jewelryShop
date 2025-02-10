@@ -5,8 +5,7 @@ const Data = [
     shortDescription: "nice quality necklace",
     decription: "you can tru our nice quality necklace",
     price: 200000,
-    imgSrcUrl:
-      "../../src/public/images/Birds-of-Paradise-Pendant-1-325x325.jpg",
+    imgSrcUrl: "images/Birds-of-Paradise-Pendant-1-325x325.jpg",
   },
   {
     id: "2",
