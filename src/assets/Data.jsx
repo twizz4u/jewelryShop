@@ -13,7 +13,7 @@ const Data = [
     shortDescription: "nice quality necklace",
     decription: "you can tru our nice quality necklace",
     price: 200000,
-    imgSrcUrl: "../../src/public/images/Cross-of-Light-Pendant-1-325x325.jpg",
+    imgSrcUrl: "images/Cross-of-Light-Pendant-1-325x325.jpg",
   },
   {
     id: "3",
@@ -21,8 +21,7 @@ const Data = [
     shortDescription: "nice quality necklace",
     decription: "you can tru our nice quality necklace",
     price: 200000,
-    imgSrcUrl:
-      "../../../src/public/images/Cross-Stripes-Stone-Bracelet-1-325x325.jpg",
+    imgSrcUrl: "images/Cross-Stripes-Stone-Bracelet-1-325x325.jpg",
   },
   {
     id: "4",
@@ -30,8 +29,7 @@ const Data = [
     shortDescription: "nice quality necklace",
     decription: "you can tru our nice quality necklace",
     price: 200000,
-    imgSrcUrl:
-      "../../../src/public/images/Echoes-Necklace-Extension-Piece-1-325x325.jpg",
+    imgSrcUrl: "images/Echoes-Necklace-Extension-Piece-1-325x325.jpg",
   },
   {
     id: "5",
@@ -39,8 +37,7 @@ const Data = [
     shortDescription: "nice quality necklace",
     decription: "you can tru our nice quality necklace",
     price: 200000,
-    imgSrcUrl:
-      "../../../src/public/images/Four-Leaf-Clover-Rings-1-325x325.jpg",
+    imgSrcUrl: "images/Four-Leaf-Clover-Rings-1-325x325.jpg",
   },
   {
     id: "6",
@@ -48,8 +45,7 @@ const Data = [
     shortDescription: "nice quality necklace",
     decription: "you can tru our nice quality necklace",
     price: 200000,
-    imgSrcUrl:
-      "../../../src/public/images/Blue-Stripes-Stone-Earrings-1-325x325.jpg",
+    imgSrcUrl: "images/Blue-Stripes-Stone-Earrings-1-325x325.jpg",
   },
   {
     id: "7",
@@ -57,8 +53,7 @@ const Data = [
     shortDescription: "nice quality necklace",
     decription: "you can tru our nice quality necklace",
     price: 200000,
-    imgSrcUrl:
-      "../../../src/public/images/Kalvesna-Diamond-Twig-Ring-1-325x325.jpg",
+    imgSrcUrl: "images/Kalvesna-Diamond-Twig-Ring-1-325x325.jpg",
   },
   {
     id: "8",
@@ -66,8 +61,7 @@ const Data = [
     shortDescription: "nice quality necklace",
     decription: "you can tru our nice quality necklace",
     price: 200000,
-    imgSrcUrl:
-      "../../../src/public/images/Circle-of-Light-Heart-Earrings-1-325x325.jpg",
+    imgSrcUrl: "images/Circle-of-Light-Heart-Earrings-1-325x325.jpg",
   },
   {
     id: "9",
@@ -75,8 +69,7 @@ const Data = [
     shortDescription: "nice quality necklace",
     decription: "you can tru our nice quality necklace",
     price: 200000,
-    imgSrcUrl:
-      "../../../src/public/images/Birds-of-Paradise-Pendant-1-325x325.jpg",
+    imgSrcUrl: "images/Birds-of-Paradise-Pendant-1-325x325.jpg",
   },
   {
     id: "10",
@@ -84,8 +77,7 @@ const Data = [
     shortDescription: "nice quality necklace",
     decription: "you can tru our nice quality necklace",
     price: 200000,
-    imgSrcUrl:
-      "../../../src/public/images/Birds-of-Paradise-Pendant-1-325x325.jpg",
+    imgSrcUrl: "images/Birds-of-Paradise-Pendant-1-325x325.jpg",
   },
 ];
 

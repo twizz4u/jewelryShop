@@ -26,7 +26,7 @@ const Product = (prop) => {
 
   return (
     <div className="shadow-sm  rounded-sm">
-      <Link to={`/product/${data.data?.id}`}>
+      <Link to={`/jewelryShop/product/${data.data?.id}`}>
         <div className="">
           <img
             // src={`../../../src/assets/images/Birds-of-Paradise-Pendant-1-325x325.jpg`}
