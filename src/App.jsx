@@ -8,7 +8,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   { path: "/jewelryShop", element: <Home /> },
-  { path: "/jewelryShop/product/:productId", element: <Product_detail /> },
+  { path: "/jewelryShop/:productId", element: <Product_detail /> },
   { path: "/jewelryShop/order_summary/:summaryId", element: <Order_summary /> },
 ]);
 

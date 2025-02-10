@@ -29,7 +29,8 @@ const Product = (prop) => {
       <Link to={`/product/${data.data?.id}`}>
         <div className="">
           <img
-            src={`../../../assets/images/${data.data?.imgSrcUrl}`}
+            // src={`../../../src/assets/images/Birds-of-Paradise-Pendant-1-325x325.jpg`}
+            src={data.data?.imgSrcUrl}
             alt="jwelery"
           />
         </div>
