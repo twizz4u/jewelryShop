@@ -28,7 +28,10 @@ const Product = (prop) => {
     <div className="shadow-sm  rounded-sm">
       <Link to={`/product/${data.data?.id}`}>
         <div className="">
-          <img src={data.data?.imgSrcUrl} alt="jwelery" />
+          <img
+            src={`../../../assets/images/${data.data?.imgSrcUrl}`}
+            alt="jwelery"
+          />
         </div>
       </Link>
       <div className="flex items-start justify-between p-2">

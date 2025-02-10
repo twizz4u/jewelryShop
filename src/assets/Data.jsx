@@ -21,7 +21,7 @@ const Data = [
     shortDescription: "nice quality necklace",
     decription: "you can tru our nice quality necklace",
     price: 200000,
-    imgSrcUrl: "/src/assets/images/Cross-Stripes-Stone-Bracelet-1-325x325.jpg",
+    imgSrcUrl: "Cross-Stripes-Stone-Bracelet-1-325x325.jpg",
   },
   {
     id: "4",
