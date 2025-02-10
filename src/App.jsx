@@ -7,9 +7,9 @@ import "./App.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
-  { path: "/", element: <Home /> },
-  { path: "/product/:productId", element: <Product_detail /> },
-  { path: "/order_summary/:summaryId", element: <Order_summary /> },
+  { path: "/jewelryShop", element: <Home /> },
+  { path: "/jewelryShop/product/:productId", element: <Product_detail /> },
+  { path: "/jewelryShop/order_summary/:summaryId", element: <Order_summary /> },
 ]);
 
 function App() {
