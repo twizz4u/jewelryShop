@@ -30,7 +30,9 @@ const Products = () => {
 
   console.log(productData);
 
-  let productDatas = productData?.slice(1) || Data;
+  // let productDatas = productData?.slice(1) || Data;
+
+  let productDatas = Data;
 
   return (
     <div className="mx-4 mt-6">
