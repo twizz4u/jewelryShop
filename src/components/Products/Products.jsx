@@ -80,7 +80,7 @@ const Products = () => {
           return <Highlight key={id} data={data} />;
         })}
       </div>
-      <div className="Contact mt-44 grid grid-cols-1">
+      <div className="Contact mt-44 grid grid-cols-1 sm:grid-cols-2 mg:grid-cols-2 lg:grid-cols-2 ">
         <img
           src={"images/home-handmade-banner-visit-679x576.jpg"}
           alt=""

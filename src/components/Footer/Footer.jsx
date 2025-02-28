@@ -1,6 +1,6 @@
 const Footer = () => {
   return (
-    <div className="mt-20 grid grid-cols-1 bg-gray-100 justify-items-center">
+    <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-3 bg-gray-100 justify-items-center">
       <div>
         <h3 className="my-10">Quick Links</h3>
         <ul>
