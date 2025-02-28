@@ -4,10 +4,14 @@ const Highlight = (prop) => {
 
   return (
     <div>
-      <img src={highlightData.image} alt="" />
+      <div>
+        <img src={highlightData.image} alt="" className="" />
+      </div>
       <div>
         <div className="flex gap-2 mb-1">
-          <h3>Alukas</h3> . <p>FEBRUARY 17, 2023</p>
+          <span>Alukas</span>
+          <span>.</span>
+          <span>FEBRUARY 17, 2023</span>
         </div>
         <h2 className="mb-1">Christmas Gift Guide</h2>
         <p className="mb-1">Oneself...</p>

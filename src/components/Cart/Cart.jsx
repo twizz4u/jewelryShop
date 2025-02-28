@@ -25,7 +25,7 @@ const Cart = (prop) => {
   console.log(Object);
 
   return (
-    <div className="h-80 fixed top-20 right-6  w-96 border border-r bg-slate-200 rounded-xl overflow-y-auto">
+    <div className="max-h-80 fixed top-10 right-6  w-96 border border-r bg-slate-200 rounded-xl overflow-y-auto">
       <h3 className="text-center mt-3 sticky top-0">Cart Items</h3>
       <div className="flex px-4 justify-between">
         {Object.keys(cartData).length > 0 && (

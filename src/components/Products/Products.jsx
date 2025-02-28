@@ -1,6 +1,6 @@
-import img6 from "../../../public/images/home-handmade-banner-2-456x576.jpg";
-import img7 from "../../../public/images/home-handmade-banner-3-456x576.jpg";
-import img12 from "../../../public/images/home-handmade-banner-visit-679x576.jpg";
+// import img6 from "../../../public/images/home-handmade-banner-2-456x576.jpg";
+// import img7 from "../../../public/images/home-handmade-banner-3-456x576.jpg";
+//import img12 from "../../../public/images/home-handmade-banner-visit-679x576.jpg";
 import Footer from "../Footer/Footer";
 import Data from "../../assets/Data";
 import Product from "../Product/Product";
@@ -37,7 +37,7 @@ const Products = () => {
   return (
     <div className="mx-4 mt-6">
       <h2 className="text-center font-medium text-2xl">Our Products</h2>
-      <div className="mt-8 grid grid-cols-4 justify-items-center gap-5 gap-y-8">
+      <div className="mt-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 justify-items-center gap-5 gap-y-8">
         {productDatas?.map((data) => {
           return <Product key={Math.random()} data={data} />;
         })}
@@ -46,17 +46,17 @@ const Products = () => {
         <button className="my-8 text-lg">show more </button>
       </div>
 
-      <div className="category grid grid-cols-4 mt-4 gap-7">
+      <div className="category grid sm:grid-cols-2 lg:grid-cols-4 grid-cols-2 mt-4 gap-7">
         {dataCat.map((cat, id) => {
           return <ProdCat key={id} data={cat} />;
         })}
       </div>
       <div className="higlight container mx-auto flex mt-24 gap-12 justify-center relative">
         <div className="higjligth-1">
-          <img src={img6} alt="" />
+          <img src={"images/home-handmade-banner-2-456x576.jpg"} alt="" />
         </div>
         <div className="higjligth-2 mt-48">
-          <img src={img7} alt="" />
+          <img src={"images/home-handmade-banner-3-456x576.jpg"} alt="" />
         </div>
         <div className="absolute" style={{ left: "60%" }}>
           <h2 className="font-medium text-2xl">Amplify Crystal Elegance</h2>
@@ -68,19 +68,24 @@ const Products = () => {
           </h2>
         </div>
       </div>
-      <div className="journal grid grid-cols-4 gap-4 mt-20">
-        <div className="col-span-4 text-center">
+      <div className="journal grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-20">
+        <div className="col-span-2 lg:col-span-4 text-center">
           <h2 className="">Lorem ipsum dolor, sit amet consectetur ad</h2>
           <p className="">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus vel
           </p>
         </div>
+
         {HighlightData.map((data, id) => {
           return <Highlight key={id} data={data} />;
         })}
       </div>
-      <div className="Contact mt-44 grid grid-cols-2">
-        <img src={img12} alt="" className="w-full" />
+      <div className="Contact mt-44 grid grid-cols-1">
+        <img
+          src={"images/home-handmade-banner-visit-679x576.jpg"}
+          alt=""
+          className="w-full"
+        />
         <div
           className="flex flex-col items-center justify-center"
           style={{ backgroundColor: "rgb(249, 241, 239)" }}

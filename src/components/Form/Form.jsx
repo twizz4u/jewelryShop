@@ -33,11 +33,9 @@ const Form = () => {
     top: "50%",
     left: "50%",
     transform: "translate(-50%, -50%)",
-    width: "50vw",
-    height: "50vh",
+    width: "60vw",
+    height: "60vh",
     background: "#bbb",
-    display: "flex",
-    flexDirection: "column",
   };
 
   function closeHandler() {
@@ -81,117 +79,125 @@ const Form = () => {
   console.log(error.name);
   console.log(confirmed);
 
+  const backdrop = {
+    position: "fixed",
+    left: "0",
+    right: "0",
+    top: "0",
+    bottom: "0",
+    zIndex: "2",
+    background: "rgba(255, 255, 255, 0.4)",
+    backdropFilter: "blur(1px)",
+  };
+
   return (
-    <div
-      style={{
-        position: "fixed",
-        left: "0",
-        right: "0",
-        top: "0",
-        bottom: "0",
-        zIndex: "2",
-        background: "rgba(255, 255, 255, 0.4)",
-        backdropFilter: "blur(1px)",
-      }}
-    >
+    <div style={backdrop}>
       {confirmed && <h1>Order successfully...</h1>}
       {!confirmed && (
-        <form style={style} className="items-center justify-center gap-3">
+        <div style={style}>
           <div
             style={{ position: "absolute", top: "6%", right: "6%" }}
             onClick={closeHandler}
           >
-            Cancel Icon
+            <button>Cancel Icon</button>
           </div>
-          <div className="flex  w-2/4 justify-center">
-            <label className=" basis-20">Name</label>
-            <div className="flex flex-col">
-              <input
-                type="text"
-                className="grow"
-                value={formValue.name}
-                onChange={(e) => {
-                  setFormValue({ ...formValue, name: e.target.value });
-                }}
-              />
-              {error?.name && (
-                <small style={{ color: "red" }}>{"error input name"}</small>
-              )}
+          <form className="p-6 pt-14 w-[40%] mx-auto">
+            <div className="">
+              <label className="">Name</label>
+              <div className="my-2">
+                <input
+                  type="text"
+                  className="w-full"
+                  value={formValue.name}
+                  onChange={(e) => {
+                    setFormValue({ ...formValue, name: e.target.value });
+                  }}
+                />
+                {error?.name && (
+                  <small style={{ color: "red" }}>{"error input name"}</small>
+                )}
+              </div>
             </div>
-          </div>
-          <div className="flex  w-2/4 justify-center ">
-            <label className="basis-20">Surname</label>
-            <div className="flex flex-col">
-              <input
-                type="text"
-                className="grow"
-                value={formValue.surname}
-                onChange={(e) => {
-                  setFormValue({ ...formValue, surname: e.target.value });
-                }}
-              />
-              {error.surname && (
-                <small style={{ color: "red" }}>{"error input surname"}</small>
-              )}
+            <div className="">
+              <label className="">Surname</label>
+              <div className="my-2">
+                <input
+                  type="text"
+                  className="w-full"
+                  value={formValue.surname}
+                  onChange={(e) => {
+                    setFormValue({ ...formValue, surname: e.target.value });
+                  }}
+                />
+                {error.surname && (
+                  <small style={{ color: "red" }}>
+                    {"error input surname"}
+                  </small>
+                )}
+              </div>
             </div>
-          </div>
-          <div className="flex  w-2/4 justify-center">
-            <label className="basis-20">Phone no</label>
-            <div className="flex flex-col">
-              <input
-                type="number"
-                className="grow"
-                value={formValue.phoneNo}
-                onChange={(e) => {
-                  setFormValue({ ...formValue, phoneNo: e.target.value });
-                }}
-              />
-              {error.phoneNo && (
-                <small style={{ color: "red" }}>{"error input Phone No"}</small>
-              )}
+            <div className="">
+              <label className="">Phone no</label>
+              <div className="my-2">
+                <input
+                  type="number"
+                  className="w-full"
+                  value={formValue.phoneNo}
+                  onChange={(e) => {
+                    setFormValue({ ...formValue, phoneNo: e.target.value });
+                  }}
+                />
+                {error.phoneNo && (
+                  <small style={{ color: "red" }}>
+                    {"error input Phone No"}
+                  </small>
+                )}
+              </div>
             </div>
-          </div>
-          <div className="flex  w-2/4 justify-center">
-            <label className="basis-20">state</label>
-            <div className="flex flex-col">
-              <input
-                type="text"
-                className="grow"
-                value={formValue.state}
-                onChange={(e) => {
-                  setFormValue({ ...formValue, state: e.target.value });
-                }}
-              />
-              {error.state && (
-                <small style={{ color: "red" }}>{"error input state"}</small>
-              )}
+            <div className="">
+              <label className="">state</label>
+              <div className="my-2">
+                <input
+                  type="text"
+                  className="w-full"
+                  value={formValue.state}
+                  onChange={(e) => {
+                    setFormValue({ ...formValue, state: e.target.value });
+                  }}
+                />
+                {error.state && (
+                  <small style={{ color: "red" }}>{"error input state"}</small>
+                )}
+              </div>
             </div>
-          </div>
-          <div className="flex  w-2/4 justify-center">
-            <label className="basis-20">Address</label>
-            <div className="flex flex-col">
-              <input
-                type="text"
-                className="grow"
-                value={formValue.address}
-                onChange={(e) => {
-                  setFormValue({ ...formValue, address: e.target.value });
-                }}
-              />
-              {error.address && (
-                <small style={{ color: "red" }}>{"error input Adrress"}</small>
-              )}
+            <div className="">
+              <label className="">Address</label>
+              <div className="my-2">
+                <input
+                  type="text"
+                  className="w-full"
+                  value={formValue.address}
+                  onChange={(e) => {
+                    setFormValue({ ...formValue, address: e.target.value });
+                  }}
+                />
+                {error.address && (
+                  <small style={{ color: "red" }}>
+                    {"error input Adrress"}
+                  </small>
+                )}
+              </div>
             </div>
-          </div>
-          <div className="flex w-2/4 justify-end">
-            <input
-              type="submit"
-              value="Place Order"
-              className="bg-slate-200 rounded-md py-1 px-3"
-              onClick={submitHandler}
-            />
-          </div>
-        </form>
+            <div className="">
+              <input
+                type="submit"
+                value="Place Order"
+                className="bg-slate-200 rounded-md py-1 px-3"
+                onClick={submitHandler}
+              />
+            </div>
+          </form>
+        </div>
       )}
     </div>
   );
