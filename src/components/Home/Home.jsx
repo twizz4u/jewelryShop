@@ -26,10 +26,8 @@ const Home = () => {
 
   const itemInCart = cart.length > 0;
 
-  // console.log(formUi);
-
   return (
-    <div>
+    <div className="max-w-[1400px] mx-auto">
       {formUi && itemInCart && <Form />}
       <Hero />
       <Products />
@@ -37,13 +35,5 @@ const Home = () => {
     </div>
   );
 };
-
-// const Newsletter = () => {
-//   return <h1>Hello how are you doing</h1>;
-// };
-
-// const LetTry = () => {
-//   return <p>let tyr</p>;
-// };
 
 export default Home;

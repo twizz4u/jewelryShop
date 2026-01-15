@@ -2,6 +2,7 @@ import CartItem from "./cartItem";
 import { uiActions } from "../../store/UI";
 import { cartActions } from "../../store/Cart";
 import { useDispatch } from "react-redux";
+import { motion, AnimatePresence } from "framer-motion";
 
 const Cart = (prop) => {
   const cartData = prop.cart;
@@ -22,62 +23,86 @@ const Cart = (prop) => {
     dispatch(uiActions.formToggle());
   }
 
-  console.log(Object);
+  // Calculate total price
+  const totalPrice = cartData.reduce((acc, item) => acc + item.totalPrice, 0);
 
   return (
-    <div className="max-h-80 fixed top-10 right-6  w-96 border border-r bg-slate-200 rounded-xl overflow-y-auto">
-      <h3 className="text-center mt-3 sticky top-0">Cart Items</h3>
-      <div className="flex px-4 justify-between">
-        {Object.keys(cartData).length > 0 && (
-          <button onClick={removeItem}>remove all</button>
-        )}
-        <button className="" onClick={closeHandler}>
-          close icon
-        </button>
-      </div>
+    <AnimatePresence>
+        <>
+            {/* Backdrop */}
+            <motion.div 
+                className="fixed inset-0 bg-black/60 backdrop-blur-sm z-[100]"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={closeHandler}
+            />
 
-      {cartData.map((cartItem) => {
-        return <CartItem key={cartItem.id} data={cartItem} />;
-      })}
+            {/* Sidebar Drawer */}
+            <motion.div 
+                className="fixed top-0 right-0 h-full w-full sm:w-[450px] bg-white shadow-2xl z-[101] flex flex-col"
+                initial={{ x: "100%" }}
+                animate={{ x: 0 }}
+                exit={{ x: "100%" }}
+                transition={{ type: "spring", damping: 25, stiffness: 200 }}
+            >
+                {/* Header */}
+                <div className="flex items-center justify-between p-6 border-b border-gray-100">
+                    <h3 className="text-xl font-serif font-medium text-gray-900">
+                        Shopping Cart <span className="text-sm font-sans text-gray-500 ml-2">({cartData.length} items)</span>
+                    </h3>
+                    <button 
+                        onClick={closeHandler}
+                        className="p-2 hover:bg-gray-100 rounded-full transition-colors text-gray-400 hover:text-gray-900"
+                    >
+                         <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                        </svg>
+                    </button>
+                </div>
 
-      {/* <div className="cartBox p-4">
-        <div className="cartItem flex justify-between border-b-4 pb-3 border-gray-500">
-          <div className="cartItemdescription">
-            <h3>item name</h3>
-            <p>price</p>
-            <p>Amount</p>
-          </div>
-          <div className="cartItemValue text-right">
-            <p>necklace</p>
-            <p>20000</p>
-            <p>3</p>
-          </div>
-        </div>
-      </div>
-      <div className="cartBox p-4">
-        <div className="cartItem flex justify-between border-b-4 pb-3  border-gray-500">
-          <div className="cartItemdescription">
-            <h3>item name</h3>
-            <p>price</p>
-            <p>Amount</p>
-          </div>
-          <div className="cartItemValue text-right">
-            <p>necklace</p>
-            <p>20000</p>
-            <p>3</p>
-          </div>
-        </div>
-      </div> */}
-      <div className=" text-right p-4">
-        <button
-          className="py-2 px-7 bg-slate-600 text-white rounded-md"
-          onClick={onshowFormHandler}
-          disabled={Object.keys(cartData).length == 0}
-        >
-          {Object.keys(cartData).length == 0 ? "No Item" : "Order"}
-        </button>
-      </div>
-    </div>
+                {/* Cart Items List */}
+                <div className="flex-1 overflow-y-auto p-6 space-y-6">
+                    {cartData.length === 0 ? (
+                        <div className="h-full flex flex-col items-center justify-center text-center text-gray-500 space-y-4">
+                            <span className="text-4xl text-gray-300">🛒</span>
+                            <p>Your cart is empty.</p>
+                            <button onClick={closeHandler} className="text-amber-700 font-medium hover:underline">Start Shopping</button>
+                        </div>
+                    ) : (
+                         cartData.map((cartItem) => {
+                            return <CartItem key={cartItem.id} data={cartItem} />;
+                        })
+                    )}
+                </div>
+
+                {/* Footer / Actions */}
+                {cartData.length > 0 && (
+                     <div className="p-6 border-t border-gray-100 bg-gray-50">
+                        <div className="flex justify-between items-center mb-6">
+                            <span className="text-gray-600 font-medium">Subtotal</span>
+                            <span className="text-2xl font-bold text-gray-900">#{totalPrice}</span>
+                        </div>
+                        
+                        <div className="space-y-3">
+                            <button
+                                className="w-full py-3.5 bg-neutral-900 text-white rounded-lg font-semibold tracking-wide hover:bg-amber-700 transition-all duration-300 shadow-lg hover:shadow-xl transform active:scale-[0.98]"
+                                onClick={onshowFormHandler}
+                            >
+                                PROCEED TO CHECKOUT
+                            </button>
+                            <button 
+                                onClick={removeItem}
+                                className="w-full py-2 text-sm text-red-500 hover:text-red-700 font-medium"
+                            >
+                                Clear Cart
+                            </button>
+                        </div>
+                    </div>
+                )}
+            </motion.div>
+        </>
+    </AnimatePresence>
   );
 };
 

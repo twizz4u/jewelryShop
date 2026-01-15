@@ -20,6 +20,7 @@ const cartStore = createSlice({
           quantity: 1,
           totalPrice: newItem.price,
           name: newItem.title,
+          image: newItem.image,
         });
       } else {
         itemExist.quantity++;

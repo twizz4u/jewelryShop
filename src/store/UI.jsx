@@ -5,6 +5,7 @@ const uiStore = createSlice({
   initialState: {
     showCart: false,
     showForm: false,
+    showNav: false,
   },
 
   reducers: {
@@ -15,6 +16,10 @@ const uiStore = createSlice({
 
     formToggle(state) {
       state.showForm = state.showForm ? false : true;
+    },
+
+    mobilenavToggle(state) {
+      state.showNav = !state.showNav;
     },
   },
 });
